@@ -1,0 +1,2284 @@
+
+*{
+    box-sizing: border-box;
+}
+
+body,html{
+    margin: 0;
+    padding: 0;
+    font-family: 'Montserrat', sans-serif;
+    max-width: 2560px;
+    min-width: 320px;
+}
+
+.global-button{
+    position: relative;
+    padding: 13px 32px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border: 2px solid #336699;
+    border-radius: 8px;
+    background: transparent;
+    color: #336699;
+    transition: color .15s ease;
+}
+
+.global-button::before{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #336699;
+    transform: scaleX(0);
+    transition: transform .4s ease;
+    z-index: -1;
+}
+
+.global-button:hover::before{
+    transform: scaleX(1);
+}
+
+.global-button:hover{
+    color: white;
+}
+
+.global-navigation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+    height: 100px;
+    background: #222533;
+    z-index: 999;
+}
+
+.gn-conteiner{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.gn-logo{
+    margin: 0;
+    padding: 0;
+    text-decoration: none;
+    color: white;
+}
+
+.gn-logo a{
+    text-decoration: none;
+    color: white;
+}
+
+.gn-list-conteiner{
+    display: block;
+}
+
+.gn-list-conteiner.opened{
+    display: block;
+}
+
+.gn-list{
+    margin: 0;
+    padding: 0;
+    padding-left: 8rem;
+    list-style: none;
+    display: flex;
+}
+
+.gn-item{
+    position: relative;
+    margin: 0 35px;
+    padding: 8px 0;
+}
+
+.gn-item a{
+    margin: 0;
+    padding: 0;
+    color: white;
+    text-decoration: none;
+    font-size: 18px;
+    font-weight: 600;
+    transition: .3s;
+}
+
+.gn-item-active a{
+    color: #336699;
+}
+
+.gn-item-active .gn-item-line{
+    transform: scaleX(1);
+}
+
+.gn-item-line{
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    background: #336699;
+    width: 100%;
+    height: 2px;
+    transform: scaleX(0);
+    transition: .3s;
+}
+
+.gn-item:hover .gn-item-line{
+    color: #336699;
+    transform: scaleX(1);
+}
+
+.gn-item:hover a{
+    color: #336699;
+}
+
+.gn-menu{
+    position: relative;
+    display: none;
+    height: 20px;
+    width: 52px;
+}
+
+.gn-menu-line{
+    position: absolute;
+    left: 0;
+    height: 2px;
+    width: 100%;
+    background: white;
+}
+
+.gn-menu-line:nth-child(1).active{
+    top: 50%;
+    margin-top: -1px;
+    transform: rotate(-45deg);
+}
+
+.gn-menu-line:nth-child(2){
+    bottom: 0;
+}
+
+.gn-menu-line:nth-child(2).active{
+    bottom: 50%;
+    margin-top: 1px;
+    transform: rotate(45deg);
+}
+
+
+
+
+
+.global-conteiner{
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.gc-home{
+    position: relative;
+    width: 100%;
+    height: 100vh;
+    z-index: 1;   
+}
+
+.gc-home-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.gc-home-bg::after{
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: black;
+    opacity: 0.57;
+}
+
+.gc-home-bg img{
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.gc-home-wrapper{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    width: 100%;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.gc-home-content{
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    width: 1240px;
+    text-align: center;
+    color: white;
+}
+
+.gc-home-span{
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 40px;
+    font-weight: 500;
+}
+
+.gc-home-header{
+    display: block;
+    margin: 0;
+    padding: 0;
+    font-size: 70px;
+    font-weight: 600;
+    line-height: 1.15;
+}
+
+.gc-home-header_1{
+    margin-top: 25px;
+}
+
+.gc-home-header_2{
+    margin-bottom: 25px;
+    color: #336699;
+}
+
+.gc-home-paragraph{
+    margin: 0;
+    margin-bottom: 55px;
+    padding: 0 5rem;
+    font-size: 21px;
+    font-weight: 400;
+    line-height: 1.4;
+}
+
+.gc-home-buttons-conteiner{
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    width: 500px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gc-home-button{
+    position: relative;
+    margin: 0;
+    padding: 13px 35px;
+    font-family: 'Montserrat', sans-serif;
+    font-size: 16px;
+    font-weight: 500;
+    border: none;
+    border-radius: 8px;
+    background: #336699;
+    color: white;
+    overflow: hidden;
+    transition: .3s ease;
+}
+
+.gc-home-button:hover{
+    background: #174a7c;
+}
+
+
+
+.gc-about{
+    position: relative;
+    width: 100%;
+    z-index: 1;
+}
+
+.gc-about-wrapper{
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    display: flex;
+    width: 1440px;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gc-about-content{
+    position: relative;
+    width: 800px;
+}
+
+.gc-about-header_1{
+    margin: 0;
+    padding: 0;
+    font-size: 48px;
+    font-weight: 700;
+    color: #336699;
+}
+
+
+.gc-about-header_2{
+    margin: 0;
+    padding: 0;
+    font-size: 35px;
+    font-weight: 700;
+    color: #484848;
+}
+
+.gc-about-paragraph{
+    margin: 0;
+    padding: 0;
+    padding-right: 100px;
+    font-size: 18px;
+    color: #484848;
+}
+
+.gc-about-paragraph_1{
+    margin-top: 35px;
+    margin-bottom: 20px;
+}
+
+.gc-about-button-conteiner{
+    margin: 0;
+    margin-top: 40px;
+    padding: 0;
+    display: block;
+}
+
+.gc-about-button{
+    margin: 0;
+    padding: 13px 0;
+    padding-left: 16px;
+    padding-right: 32px;
+}
+
+.gc-about-image-conteiner{
+    position: relative;
+    display: flex;
+    width: 600px;
+    justify-content: center;
+    align-items: center;
+}
+
+.gc-about-bg{
+    position: absolute;
+    width: 100%;
+    z-index: -1;
+}
+
+.gc-about-bg img{
+    width: 100%;
+    object-fit: cover;
+}
+
+
+
+
+
+
+
+.gc-choose-us{
+    position: relative;
+    width: 100%;
+    z-index: 3;
+}
+
+.gc-choose-us-wrapper{
+    position: relative;
+    margin: 0 auto;
+    padding: 9rem 0;
+    display: block;
+    width: 1440px;
+    text-align: center;
+}
+
+.gc-choose-us-header-conteiner{
+    position: relative;
+    width: 100%;
+}
+
+.gc-choose-us-header{
+    margin: 0;
+    padding: 0;
+    font-size: 35px;
+    color: #484848;
+}
+
+.gc-choose-us-paragraph{
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+    font-size: 16px;
+    line-height: 1.55;
+    color: #484848;
+}
+
+.gc-choose-us-content{
+    position: relative;
+    margin: 0;
+    padding: 0;
+    padding-top: 35px;
+    width: 100%;
+}
+
+.gc-choose-us-list-conteiner{
+    position: relative;
+    width: 100%;
+}
+
+.gc-choose-us-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    justify-content: space-between;
+}
+
+.gc-choose-us-item{
+    margin: 0;
+    padding: 0;
+    display: inline-block;
+}
+
+.gc-choose-us-item-content{
+    position: relative;
+    margin: 0;
+    padding: 0;
+}
+
+.gc-choose-us-item-header{
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    font-size: 23px;
+    color: #484848;
+}
+
+.gc-choose-us-item-paragraph{
+    margin: 0;
+    padding: 0 45px;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.5;
+}
+
+
+
+
+.gc-our-services{
+    position: relative;
+    width: 100%;
+    z-index: 4;
+}
+
+.gc-our-services-wrapper{
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    padding-bottom: 9rem;
+    width: 1440px;
+    text-align: center;
+}
+
+.gc-our-services-header-conteiner{
+    position: relative;
+    width: 100%;
+}
+
+.gc-our-services-header{
+    margin: 0;
+    margin-bottom: 45px;
+    padding: 0;
+    font-size: 35px;
+    color: #484848;
+}
+
+.gc-our-services-content{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.gc-our-services-list-conteiner{
+    position: relative;
+    display: block;
+    width: 100%;
+}
+
+.gc-our-services-list{
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gc-our-services-item:nth-child(2){
+    margin: 0 35px;
+    padding: 0;
+}
+
+.gc-our-services-image{
+    display: block;
+    margin: 0;
+    padding: 0;
+    width: 100%;
+}
+
+.gc-our-services-image img{
+    width: 100%;
+}
+
+.gc-our-services-item-content{
+    position: relative;
+    margin: 0;
+    margin-top: 20px;
+    padding: 0;
+    text-align: left;
+}
+
+.gc-our-services-item-header{
+    margin: 0;
+    margin-bottom: 20px;
+    padding: 0;
+    font-size: 23px;
+    color: #484848;
+}
+
+.gc-our-services-item-paragraph{
+    margin: 0;
+    padding: 0;
+    font-size: 16px;
+    color: #484848;
+    line-height: 1.75;
+
+}
+
+.gc-our-services-item-button{
+    margin-top: 40px;
+}
+
+
+
+
+
+.gc-projects{
+    position: relative;
+    width: 100%;
+    z-index: 5;
+}
+
+.gc-projects-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.gc-projects-bg img{
+    object-fit: cover;
+    width: 100%;
+    height: 100%;
+}
+
+.gc-projects-wrapper{
+    position: relative;
+    margin: 0 auto;
+    padding: 0;
+    padding-top: 40px;
+    padding-bottom: 8rem;
+    width: 1440px;
+}
+
+.gc-projects-header-conteiner{
+    position: relative;
+    margin: 0;
+    margin-bottom: 45px;
+    padding: 0;
+    width: 100%;
+    color: white;
+    text-align: center;
+}
+
+.gc-projects-header{
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 0;
+    font-size: 35px;
+}
+
+.gc-projects-paragraph{
+    margin: 0;
+    margin-bottom: 40px;
+    padding: 0 9rem;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+}
+
+.gc-projects-button{
+    margin: 0;
+    padding: 13px 32px;
+    font-size: 16px;
+    font-family: 'Montserrat', sans-serif;
+    font-weight: 600;
+    border: none;
+    border-radius: 8px;
+    background: #ffcb0f;
+    color: #336699;
+    transition: .3s ease;
+}
+
+.gc-projects-button:hover{
+    background: #af8e14;
+}
+
+.gc-projects-content{
+    position: relative;
+    display: flex;
+    width: 100%;
+    justify-content: center;
+}
+
+.gc-projects-content img{
+    object-fit: cover;
+}
+
+.gc-projects-image-left{
+    position: relative;
+    margin-right: 20px;
+}
+
+.gc-projects-image-left img{
+    width: 100%;
+    height: 100%;
+}
+
+.gc-projects-image-right{
+    position: relative;
+}
+
+.gc-projects-image-right-top{
+    display: flex;
+    width: 100%;
+}
+
+.gc-projects-image-right-top img{
+    margin-bottom: 15px;
+    width: 50%;
+}
+
+.gc-projects-image-right-top img:nth-child(1){
+    margin-right: 16px;
+}
+
+.gc-projects-image-right-bot{
+    display: flex;
+    width: 100%;
+}
+
+.gc-projects-image-right-bot img{
+    width: 50%;
+}
+
+.gc-projects-image-right-bot img:nth-child(1){
+    margin-right: 15px;
+}
+
+
+
+
+.global-footer{
+    position: relative;
+    width: 100%;
+    z-index: 7;
+}
+
+.gf-map-conteiner{
+    display: block;
+    margin-bottom: -4px;
+}
+
+.gf-map-conteiner iframe{
+    height: 800px !important;
+}
+
+.gf-contact{
+    position: relative;
+    width: 100%;
+    color: white;
+}
+
+.gf-contact-bg{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    z-index: -1;
+}
+
+.gf-contact-bg img{
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.gf-contact-wrapper{
+    position: relative;
+    margin: 0 auto;
+    padding: 7rem 0;
+    width: 920px;
+}
+
+.gf-contact-content{
+    position: relative;
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.gf-contact-about{
+    position: relative;
+    text-align: left;
+}
+
+.gf-contact-about-span{
+    display: block;
+    margin-bottom: 40px;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.gf-contact-about-header{
+    margin: 0;
+    padding: 0;
+    font-size: 35px;
+    line-height: 1;
+    color: #336699;
+}
+
+.gf-contact-about-header-span{
+    font-size: 14px;
+    color: #b7b7b7;
+}
+
+.gf-contact-about-paragraph{
+    margin: 0;
+    margin-top: 25px;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 500;
+    line-height: 1.6;
+    width: 350px;
+}
+
+.gf-contact-info{
+    position: relative;
+}
+.gf-contact-info-header{
+    padding: 0;
+    font-size: 25px;
+    font-weight: 700;
+}
+
+.gf-contact-info-location{
+    margin: 25px 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.gf-contact-info-email{
+    margin: 25px 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.gf-contact-info-number{
+    margin: 25px 0;
+    padding: 0;
+    font-size: 16px;
+    font-weight: 700;
+}
+
+.gf-bar{
+    position: relative;
+    width: 100%;
+    background: #1a1c27;
+    color: white;
+}
+
+.gf-bar-content{
+    position: relative;
+    margin: 0;
+    padding: 30px 0;
+    text-align: center;
+}
+
+.gf-bar-header{
+    margin: 0;
+    padding: 0;
+    font-weight: 600;
+    font-size: 26px;
+}
+
+.gf-bar-header-color{
+    color: #336699;
+}
+
+
+
+
+
+
+
+
+
+@media only screen and (max-width: 1540px) {
+    .gn-list{
+        padding-left: 4rem;
+    }
+
+    .gn-item{
+        margin: 0 25px;
+    }
+
+    .gn-item a{
+        font-size: 16px;
+    }
+
+    .gc-home-span{
+        font-size: 32px;
+    }
+
+    .gc-home-header{
+        font-size: 62px;
+    }
+
+    .gc-home-paragraph{
+        padding: 0 8rem;
+        font-size: 19px;
+    }
+
+    .gc-about-wrapper{
+        width: 1220px;
+    }
+
+    .gc-about-content{
+        width: 700px;
+    }
+
+    .gc-about-header_1{
+        font-size: 42px;
+    }
+
+    .gc-about-header_2{
+        font-size: 31px;
+    }
+
+    .gc-about-image-conteiner{
+        width: 500px;
+    }
+
+    .gc-about-paragraph{
+        font-size: 16.5px;
+    }
+
+    .gc-choose-us-wrapper{
+        width: 1220px;
+    }
+
+    .gc-choose-us-header{
+        font-size: 31px;
+    }
+
+    .gc-choose-us-paragraph{
+        padding: 0 3rem;
+        font-size: 16.5px;
+    }
+
+    .gc-choose-us-item-header{
+        font-size: 20px;
+    }
+
+    .gc-choose-us-item-paragraph{
+        padding: 0 30px;
+        font-size: 15px;
+    }
+
+    .gc-our-services-header{
+        font-size: 31px;
+    }
+
+    .gc-our-services-wrapper{
+        width: 1220px;
+    }
+
+    .gc-our-services-item-header{
+        margin-bottom: 12px;
+        font-size: 18.5px;
+    }
+
+    .gc-our-services-item-paragraph{
+        font-size: 15px;
+        line-height: 1.5;
+    }
+
+    .gc-projects-wrapper{
+        width: 1220px;
+    }
+
+    .gc-projects-header{
+        font-size: 31px;
+        margin-bottom: 30px;
+    }
+
+    .gc-projects-paragraph{
+        margin-bottom: 30px;
+        padding: 0 6rem;
+        font-size: 15px;
+    }
+
+    .gf-contact-about-span{
+        font-size: 23px;
+        margin-bottom: 30px;
+    }
+
+    .gf-contact-about-header{
+        font-size: 31px;
+    }
+
+    .gf-contact-about-header-span{
+        font-size: 12.5px;
+    }
+
+    .gf-contact-about-paragraph{
+        margin-top: 18px;
+        font-size: 15px;
+    }
+
+    .gf-contact-info-header{
+        font-size: 23px;
+    }
+
+    .gf-contact-info-location{
+        margin: 20px 0;
+         font-size: 15px;
+    }
+
+    .gf-contact-info-email{
+        margin: 20px 0;
+         font-size: 15px;
+    }
+
+    .gf-contact-info-number{
+        margin: 20px 0;
+         font-size: 15px;
+    }
+    
+    .gf-bar-header{
+        font-size: 24px;
+    }
+  }
+
+
+
+
+
+  @media only screen and (max-width: 1240px) {
+    .global-button{
+        padding: 10px 28px;
+        font-size: 15px;
+    }
+
+    .global-navigation{
+        height: 90px;
+    }
+
+    .gn-logo img{
+        width: 140px;
+    }
+
+    .gn-list{
+        padding-left: 3rem;
+    }
+
+    .gn-item{
+        margin: 0 18px;
+    }
+
+    .gc-home-span{
+        font-size: 29px;
+    }
+
+    .gc-home-header{
+        font-size: 56px;
+    }
+
+    .gc-home-header_1{
+        margin-top: 18px;
+    }
+
+    .gc-home-header_2{
+        margin-bottom: 18px;
+    }
+
+    .gc-home-paragraph{
+        margin-bottom: 40px;
+        padding: 0 5rem;
+        font-size: 17px;
+    }
+
+    .gc-home-buttons-conteiner{
+        width: 400px;
+    }
+    
+    .gc-home-button{
+        padding: 11px 28px;
+        font-size: 15px;
+    }
+
+    .gc-about-wrapper{
+        width: 1004px;
+    }
+
+    .gc-about-content{
+        width: 600px;
+    }
+
+    .gc-about-header_1{
+        font-size: 37px;
+    }
+
+    .gc-about-header_2{
+        font-size: 27px;
+    }
+
+    .gc-about-image-conteiner{
+        width: 400px;
+    }
+
+    .gc-about-paragraph{
+        padding-right: 3rem;
+        font-size: 15px;
+    }
+
+    .gc-about-paragraph_1{
+        margin-top: 25px;
+        margin-bottom: 15px;
+    }
+
+    .gc-about-button-conteiner{
+        margin-top: 25px;
+    }
+
+    .gc-about-button{
+        padding-left: 12px;
+        padding-right: 26px;
+    }
+
+    .gc-about-image img{
+        width: 250px;
+    }
+
+    .gc-choose-us-wrapper{
+        padding: 7rem 0;
+        width: 1004px;
+    }
+
+    .gc-choose-us-header{
+        font-size: 28px;
+    }
+
+    .gc-choose-us-paragraph{
+        margin-top: 18px;
+        padding: 0 1rem;
+        font-size: 15px;
+    }
+
+    .gc-choose-us-item-header{
+        margin-bottom: 15px;
+        font-size: 17px;
+    }
+
+    .gc-choose-us-item-paragraph{
+        padding: 0 15px;
+        font-size: 14px;
+    }
+
+    .gc-our-services-header{
+        font-size: 29px;
+        margin-bottom: 38px;
+    }
+
+    .gc-our-services-wrapper{
+        width: 1004px;
+    }
+
+    .gc-our-services-item-header{
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
+
+    .gc-our-services-item-paragraph{
+        font-size: 13.5px;
+        line-height: 1.5;
+    }
+
+    .gc-our-services-item-button{
+        margin-top: 30px;
+    }
+
+    .gc-projects-wrapper{
+        padding-bottom: 6rem;
+        width: 1004px;
+    }
+
+    .gc-projects-header{
+        font-size: 29px;
+        margin-bottom: 25px;
+    }
+
+    .gc-projects-paragraph{
+        margin-bottom: 25px;
+        padding: 0 3rem;
+        font-size: 14px;
+    }
+
+    .gf-map-conteiner iframe{
+        height: 650px !important;
+    }
+
+    .gc-projects-button{
+        padding: 10px 28px;
+        font-size: 15px;
+    }
+
+    .gf-contact-about-span{
+        font-size: 21px;
+        margin-bottom: 26px;
+    }
+
+    .gf-contact-about-header{
+        font-size: 29px;
+    }
+
+    .gf-contact-about-header-span{
+        font-size: 11.5px;
+    }
+
+    .gf-contact-about-paragraph{
+        margin-top: 15px;
+        font-size: 14px;
+        width: 300px;
+    }
+
+    .gf-contact-info-header{
+        font-size: 21px;
+    }
+
+    .gf-contact-info-location{
+        margin: 18px 0;
+        font-size: 14px;
+    }
+
+    .gf-contact-info-email{
+        margin: 18px 0;
+        font-size: 14px;
+    }
+
+    .gf-contact-info-number{
+        margin: 18px 0;
+        font-size: 14px;
+    }
+    
+    .gf-bar-header{
+        font-size: 22px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+  @media only screen and (max-width: 1024px) {
+    .global-button{
+        padding: 10px 28px;
+        font-size: 15px;
+    }
+
+    .global-navigation{
+        height: 80px;
+    }
+
+    .gn-conteiner{
+        padding: 0 5rem;
+        justify-content: space-between;
+    }
+
+    .gn-logo img{
+        width: 120px;
+    }
+
+    .gn-list-conteiner{
+        position: absolute;
+        padding-top: 80px;
+        padding-right: 5rem;
+        display: none;
+        top: 0;
+        right: 0;
+        height: 100vh;
+        width: 400px;
+        background: #222533;
+    }
+
+    .gn-list-conteiner::before{
+        content: '';
+        position: absolute;
+        top: 80px;
+        left: 0;
+        width: 100%;
+        height: 1px;
+        background: #2f3447;
+    }
+
+    .gn-list{
+        padding: 0;
+        flex-direction: column;
+    }
+
+    .gn-item{
+        padding: 18px 20px;
+    }
+
+    .gn-item-line {
+        left: 20px;
+    }
+
+    .gn-item a{
+        font-size: 24px;
+    }
+
+    .gn-menu{
+        display: inline-block;
+    }
+
+    .gc-home-span{
+        font-size: 26px;
+    }
+
+    .gc-home-header{
+        font-size: 50px;
+    }
+
+    .gc-home-paragraph{
+        margin-bottom: 35px;
+        font-size: 16px;
+    }
+
+    .gc-home-button{
+        padding: 11px 28px;
+        font-size: 15px;
+    }
+
+    .gc-about-wrapper{
+        width: 900px;
+    }
+
+    .gc-about-content{
+        width: 550px;
+    }
+
+    .gc-about-header_1{
+        font-size: 34px;
+    }
+
+    .gc-about-header_2{
+        font-size: 25px;
+    }
+
+    .gc-about-image-conteiner{
+        width: 350px;
+    }
+
+    .gc-about-paragraph{
+        padding-right: 3rem;
+        font-size: 14px;
+    }
+
+    .gc-about-paragraph_1{
+        margin-top: 22px;
+        margin-bottom: 12px;
+    }
+
+    .gc-about-button-conteiner{
+        margin-top: 22px;
+    }
+
+    .gc-about-button{
+        padding-left: 12px;
+        padding-right: 22px;
+    }
+
+    .gc-about-image img{
+        width: 220px;
+    }
+
+    .gc-choose-us-wrapper{
+        padding: 6rem 0;
+        width: 900px;
+    }
+
+    .gc-choose-us-header{
+        font-size: 26px;
+    }
+
+    .gc-choose-us-paragraph{
+        margin-top: 15px;
+        padding: 0 2rem;
+        font-size: 14px;
+    }
+
+    .gc-choose-us-item-header{
+        margin-bottom: 12px;
+        font-size: 15px;
+    }
+
+    .gc-choose-us-item-paragraph{
+        padding: 0 12px;
+        font-size: 13px;
+    }
+
+    .gc-our-services-header{
+        font-size: 26px;
+        margin-bottom: 32px;
+    }
+
+    .gc-our-services-wrapper{
+        padding-bottom: 7rem;
+        width: 900px;
+    }
+
+    .gc-our-services-item-header{
+        margin-bottom: 8px;
+        font-size: 17px;
+    }
+
+    .gc-our-services-item-paragraph{
+        font-size: 12px;
+        line-height: 1.5;
+    }
+
+    .gc-our-services-item-button{
+        margin-top: 25px;
+    }
+
+    .gc-projects-wrapper{
+        padding-bottom: 5rem;
+        width: 900px;
+    }
+
+    .gc-projects-header{
+        font-size: 27px;
+        margin-bottom: 22px;
+    }
+
+    .gc-projects-paragraph{
+        margin-bottom: 22px;
+    }
+
+    .gc-projects-image-left{
+        margin-right: 8px;
+    }
+
+    .gc-projects-image-right-top img{
+        margin-bottom: 8px;
+    }
+
+    .gc-projects-image-right-top img:nth-child(1){
+        margin-right: 8px;
+    }
+
+    .gc-projects-image-right-bot img:nth-child(1){
+        margin-right: 8px;
+    }
+
+    .gc-projects-button{
+        padding: 10px 28px;
+        font-size: 15px;
+    }
+
+    .gf-contact-wrapper{
+        width: 800px;
+    }
+
+    .gf-contact-about-span{
+        font-size: 20px;
+        margin-bottom: 22px;
+    }
+
+    .gf-contact-about-header{
+        font-size: 27px;
+    }
+
+    .gf-contact-about-header-span{
+        font-size: 11px;
+    }
+
+    .gf-contact-about-paragraph{
+        margin-top: 13px;
+        font-size: 13px;
+        width: 280px;
+    }
+
+    .gf-contact-info-header{
+        font-size: 20px;
+    }
+
+    .gf-contact-info-location{
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .gf-contact-info-email{
+        margin: 16px 0;
+        font-size: 13px;
+    }
+
+    .gf-contact-info-number{
+        margin: 16px 0;
+        font-size: 13px;
+    }
+    
+    .gf-bar-header{
+        font-size: 21px;
+    }
+  }
+
+
+
+
+
+  @media only screen and (max-width: 940px) {
+    .global-button{
+        padding: 9px 24px;
+        font-size: 14px;
+    }
+
+    .global-navigation{
+        height: 75px;
+    }
+
+    .gc-home-span{
+        font-size: 23px;
+    }
+
+    .gc-home-header{
+        font-size: 42px;
+    }
+
+    .gc-home-paragraph{
+        margin-bottom: 32px;
+        padding: 0 3rem;
+        font-size: 15px;
+    }
+
+    .gc-home-button{
+        padding: 11px 28px;
+        font-size: 15px;
+    }
+
+    .gc-about-wrapper{
+        padding-top: 2.5rem;
+        width: 748px;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gc-about-content{
+        width: 100%;
+        text-align: center;
+    }
+
+    .gc-about-header_1{
+        font-size: 34px;
+    }
+
+    .gc-about-header_2{
+        font-size: 25px;
+    }
+
+    .gc-about-image-conteiner{
+        margin: 0 auto;
+        margin-top: 3rem;
+        width: 85%;
+    }
+
+    .gc-about-paragraph{
+        padding: 0 3rem;
+    }
+
+    .gc-about-button-conteiner{
+        margin-top: 25px;
+    }
+
+    .gc-about-button{
+        padding-left: 12px;
+        padding-right: 22px;
+    }
+
+    .gc-about-image img{
+        width: 250px;
+    }
+
+    .gc-choose-us-wrapper{
+        padding: 6rem 0;
+        width: 748px;
+    }
+
+    .gc-choose-us-header{
+        font-size: 24px;
+    }
+
+    .gc-choose-us-paragraph{
+        font-size: 13px;
+    }
+
+    .gc-choose-us-content{
+        padding: 15px;
+    }
+    
+    .gc-choose-us-list{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gc-choose-us-item{
+        margin-top: 35px;
+    }
+
+    .gc-choose-us-item-header{
+        margin-bottom: 12px;
+        font-size: 19px;
+    }
+
+    .gc-choose-us-item-paragraph{
+        margin: 0 auto;
+        padding: 0 12px;
+        font-size: 14px;
+        width: 75%;
+    }
+
+    .gc-our-services-header{
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .gc-our-services-wrapper{
+        padding-bottom: 6rem;
+        width: 748px;
+    }
+
+    .gc-our-services-list{
+        margin: 0 auto;
+        width: 65%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gc-our-services-item:nth-child(2){
+        margin: 35px 0;
+    }
+
+    .gc-our-services-item-header{
+        margin-bottom: 12px;
+        font-size: 19px;
+    }
+
+    .gc-our-services-item-paragraph{
+        font-size: 14px;
+    }
+
+    .gc-our-services-item-button{
+        margin-top: 22px;
+    }
+
+    .gc-projects-wrapper{
+        width: 748px;
+    }
+
+    .gc-projects-header{
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    .gc-projects-paragraph{
+        margin-bottom: 20px;
+    }
+
+    .gc-projects-content{
+        margin: 0 auto;
+        width: 65%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gc-projects-image-left{
+        margin: 0;
+        margin-bottom: 5px;
+    }
+
+    .gc-projects-image-left img{
+        width: 100%;
+    }
+
+    .gc-projects-image-right-top img{
+        margin-bottom: 8px;
+    }
+
+    .gc-projects-image-right-top img:nth-child(1){
+        margin-right: 8px;
+    }
+
+    .gc-projects-image-right-bot img:nth-child(1){
+        margin-right: 8px;
+    }
+
+    .gc-projects-button{
+        padding: 10px 28px;
+        font-size: 15px;
+    }
+
+    .gf-contact-wrapper{
+        padding: 6rem 2rem;
+        width: 748px;
+    }
+
+    .gf-contact-about-span{
+        font-size: 19px;
+        margin-bottom: 20px;
+    }
+
+    .gf-contact-about-header{
+        font-size: 25px;
+    }
+
+    .gf-contact-about-header-span{
+        font-size: 10px;
+    }
+
+    .gf-contact-about-paragraph{
+        margin-top: 12px;
+        font-size: 12px;
+        width: 280px;
+    }
+
+    .gf-contact-info-header{
+        font-size: 20px;
+    }
+
+    .gf-contact-info-location{
+        margin: 15px 0;
+        font-size: 12px;
+    }
+
+    .gf-contact-info-email{
+        margin: 15px 0;
+        font-size: 12px;
+    }
+
+    .gf-contact-info-number{
+        margin: 15px 0;
+        font-size: 12px;
+    }
+    
+    .gf-bar-header{
+        font-size: 20px;
+    }
+  }
+
+
+
+
+
+
+
+
+  @media only screen and (max-width: 768px) {
+    .global-button{
+        padding: 9px 24px;
+        font-size: 14px;
+    }
+
+    .global-navigation{
+        height: 65px;
+    }
+
+    .gn-conteiner{
+        padding: 0 3rem;
+    }
+
+    .gn-list-conteiner{
+        width: 350px;
+    }
+
+    .gn-item a{
+        font-size: 21px;
+    }
+
+    .gc-home-span{
+        font-size: 20px;
+    }
+
+    .gc-home-header{
+        font-size: 36px;
+    }
+
+    .gc-home-paragraph{
+        margin-bottom: 35px;
+        padding: 0 4rem;
+        font-size: 14px;
+        line-height: 1.5;
+    }
+
+    .gc-home-button{
+        padding: 14px 42px;
+        font-size: 15px;
+    }
+
+    .gc-about-wrapper{
+        padding-top: 2.5rem;
+        width: 100%;
+    }
+
+    .gc-about-header_1{
+        font-size: 34px;
+    }
+
+    .gc-about-header_2{
+        font-size: 25px;
+    }
+
+    .gc-about-image-conteiner{
+        margin: 0 auto;
+        margin-top: 3rem;
+        width: 85%;
+    }
+
+    .gc-about-paragraph{
+        padding: 0 3rem;
+    }
+
+    .gc-about-button-conteiner{
+        margin-top: 25px;
+    }
+
+    .gc-about-button{
+        padding-left: 12px;
+        padding-right: 22px;
+    }
+
+    .gc-about-image img{
+        width: 220px;
+    }
+
+    .gc-choose-us-wrapper{
+        width: 100%;
+    }
+
+    .gc-choose-us-header{
+        font-size: 24px;
+    }
+
+    .gc-choose-us-paragraph{
+        font-size: 13px;
+    }
+
+    .gc-choose-us-content{
+        padding: 15px;
+    }
+    
+    .gc-choose-us-list{
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gc-choose-us-item{
+        margin-top: 35px;
+    }
+
+    .gc-choose-us-item-header{
+        margin-bottom: 12px;
+        font-size: 19px;
+    }
+
+    .gc-choose-us-item-paragraph{
+        margin: 0 auto;
+        padding: 0 12px;
+        font-size: 14px;
+        width: 75%;
+    }
+
+    .gc-our-services-header{
+        font-size: 24px;
+        margin-bottom: 30px;
+    }
+
+    .gc-our-services-wrapper{
+        padding-bottom: 6rem;
+        width: 100%;
+    }
+
+    .gc-our-services-list{
+        margin: 0 auto;
+        width: 65%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gc-our-services-item:nth-child(2){
+        margin: 35px 0;
+    }
+
+    .gc-our-services-item-header{
+        margin-bottom: 12px;
+        font-size: 19px;
+    }
+
+    .gc-our-services-item-paragraph{
+        font-size: 14px;
+    }
+
+    .gc-our-services-item-button{
+        margin-top: 22px;
+    }
+
+    .gc-projects-wrapper{
+        width: 100%;
+    }
+
+    .gc-projects-header{
+        font-size: 25px;
+        margin-bottom: 20px;
+    }
+
+    .gc-projects-paragraph{
+        margin-bottom: 20px;
+    }
+
+    .gc-projects-content{
+        margin: 0 auto;
+        width: 65%;
+        flex-direction: column;
+        align-items: center;
+        justify-content: center;
+    }
+
+    .gc-projects-image-left{
+        margin: 0;
+        margin-bottom: 5px;
+    }
+
+    .gc-projects-image-left img{
+        width: 100%;
+    }
+
+    .gc-projects-image-right-top img{
+        margin-bottom: 8px;
+    }
+
+    .gc-projects-image-right-top img:nth-child(1){
+        margin-right: 8px;
+    }
+
+    .gc-projects-image-right-bot img:nth-child(1){
+        margin-right: 8px;
+    }
+
+    .gc-projects-button{
+        padding: 10px 28px;
+        font-size: 15px;
+    }
+
+    .gf-contact-wrapper{
+        padding: 6rem 2rem;
+        width: 100%;
+    }
+
+    .gf-map-conteiner iframe{
+        height: 500px !important;
+    }
+
+    .gf-contact-about-span{
+        font-size: 19px;
+        margin-bottom: 20px;
+    }
+
+    .gf-contact-about-header{
+        font-size: 25px;
+    }
+
+    .gf-contact-about-header-span{
+        font-size: 10px;
+    }
+
+    .gf-contact-about-paragraph{
+        margin-top: 12px;
+        font-size: 12px;
+        width: 280px;
+    }
+
+    .gf-contact-info-header{
+        font-size: 20px;
+    }
+
+    .gf-contact-info-location{
+        margin: 15px 0;
+        font-size: 12px;
+    }
+
+    .gf-contact-info-email{
+        margin: 15px 0;
+        font-size: 12px;
+    }
+
+    .gf-contact-info-number{
+        margin: 15px 0;
+        font-size: 12px;
+    }
+    
+    .gf-bar-header{
+        font-size: 20px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  @media only screen and (max-width: 640px) {
+
+    .global-navigation{
+        height: 50px;
+    }
+
+    .gn-conteiner{
+        padding: 0 2rem;
+    }
+
+    .gn-list-conteiner{
+        padding-right: 38px;
+        width: 100%;
+    }
+
+    .gn-item a{
+        font-size: 19px;
+    }
+
+    .gn-menu{
+        width: 36px;
+        height: 15px;
+    }
+
+    .gc-home-span{
+        font-size: 4vw;
+    }
+
+    .gc-home-header{
+        font-size: 5.5vw;
+        line-height: 1.25;
+    }
+
+    .gc-home-paragraph{
+        padding: 0 1rem;
+        font-size: 14px;
+    }
+
+    .gc-home-buttons-conteiner{
+        padding: 0 2rem;
+        width: 100%;
+    }
+
+    .gc-home-button{
+        padding: 10px 26px;
+        font-size: 13px;
+    }
+
+    .gc-about-header_1{
+        font-size: 5.6vw;
+    }
+
+    .gc-about-header_2{
+        font-size: 4.3vw;
+    }
+
+    .gc-about-image-conteiner{
+        width: 90%;
+    }
+
+    .gc-about-paragraph{
+        padding: 0 1rem;
+    }
+
+    .gc-about-button{
+        padding-left: 16px;
+        padding-right: 42px;
+    }
+    
+    .gc-choose-us-wrapper{
+        width: 100%;
+    }
+
+    .gc-choose-us-header{
+        font-size: 24px;
+    }
+
+    .gc-choose-us-paragraph{
+        padding: 0 1rem;
+        font-size: 13px;
+    }
+
+    .gc-choose-us-item{
+        margin-top: 35px;
+    }
+
+    .gc-choose-us-item-header{
+        margin-bottom: 12px;
+        font-size: 19px;
+    }
+
+    .gc-choose-us-item-paragraph{
+        margin: 0 auto;
+        padding: 0 12px;
+        font-size: 14px;
+        width: 75%;
+    }
+
+    .gc-our-services-wrapper{
+        padding-bottom: 6rem;
+        width: 100%;
+    }
+
+    .gc-our-services-list{
+        width: 75%;
+    }
+
+    .gc-our-services-item-button{
+        margin-top: 26px;
+    }
+
+    .gc-projects-wrapper{
+        width: 100%;
+    }
+
+    .gc-projects-content{
+        width: 75%;
+    }
+
+    .gc-projects-button{
+        padding: 11px 32px;
+        font-size: 15px;
+    }
+
+    .gf-contact-wrapper{
+        padding: 4.5rem 0;
+        width: 85%;
+    }
+
+    .gf-contact-content{
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+    }
+
+    .gf-contact-about-span{
+        font-size: 21px;
+        margin-bottom: 20px;
+    }
+
+    .gf-contact-about-header{
+        font-size: 28px;
+    }
+
+    .gf-contact-about-header-span{
+        font-size: 12px;
+    }
+
+    .gf-contact-about-paragraph{
+        margin-top: 12px;
+        font-size: 14px;
+        width: 300px;
+    }
+
+    .gf-contact-info-header{
+        margin-top: 40px;
+        font-size: 22px;
+    }
+
+    .gf-contact-info-location{
+        margin: 16px 0;
+        font-size: 14px;
+    }
+
+    .gf-contact-info-email{
+        margin: 16px 0;
+        font-size: 14px;
+    }
+
+    .gf-contact-info-number{
+        margin: 16px 0;
+        font-size: 14px;
+    }
+    
+    .gf-bar-header{
+        font-size: 20px;
+    }
+  }
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+  @media only screen and (max-width: 375px) {
+
+    .gn-conteiner{
+        padding: 0 1.5rem;
+    }
+
+    .gn-menu-line{
+        height: 1px;
+    }
+
+    .gc-home-span{
+        font-size: 4vw;
+    }
+
+    .gc-home-header{
+        font-size: 5.5vw;
+        line-height: 1.25;
+    }
+
+    .gc-home-paragraph{
+        padding: 0 1rem;
+        font-size: 14px;
+    }
+
+    .gc-home-buttons-conteiner{
+        padding: 0 1.5rem;
+    }
+
+    .gc-about-image-conteiner{
+        width: 90%;
+    }
+
+    .gc-our-services-list{
+        width: 85%;
+    }
+
+    .gc-projects-paragraph{
+        padding: 0 1rem;
+    }
+
+    .gc-projects-content{
+        width: 85%;
+    }
+
+    .gf-contact-wrapper{
+        padding: 4rem 1.5rem;
+        width: 100%;
+    }
+
+    .gf-map-conteiner iframe{
+        height: 450px !important;
+    }
+
+    .gf-contact-about-span{
+        font-size: 19px;
+    }
+
+    .gf-contact-about-header{
+        font-size: 26px;
+    }
+
+    .gf-contact-about-header-span{
+        font-size: 11px;
+    }
+
+    .gf-contact-about-paragraph{
+        padding-right: 1rem;
+        margin-top: 12px;
+        font-size: 13px;
+        width: 100%;
+    }
+
+    .gf-contact-info-header{
+        margin-top: 35px;
+        font-size: 21px;
+    }
+
+    .gf-contact-info-location{
+        margin: 15px 0;
+        font-size: 13px;
+    }
+
+    .gf-contact-info-email{
+        margin: 15px 0;
+        font-size: 13px;
+    }
+
+    .gf-contact-info-number{
+        margin: 15px 0;
+        font-size: 13px;
+    }
+    
+    .gf-bar-header{
+        font-size: 18px;
+    }
+  }
